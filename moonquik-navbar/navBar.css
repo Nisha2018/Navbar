@@ -1,0 +1,230 @@
+body {
+  font-family: 'Roboto', sans-serif;
+
+}
+h1, a, li {
+  font-family: Roboto, sans-serif;
+}
+
+a, li {
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+.nav > li {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input{
+  display: none;
+}
+
+.navTop {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 1fr;
+	background: #f1e9ea;
+    padding: 15px;
+}
+
+.navTop .fa {
+	font-size: 25px;
+  color: #eb2e55;
+}
+
+.menu{
+  display: none;
+  height: 100vh;
+}
+
+#drop:checked ~ .menu {
+	display: grid;
+  grid-template-columns: 1fr 16fr 1fr;
+  line-height: 45px;
+}
+
+.menuIcon {
+	justify-self: end;
+  align-self: center;
+}
+
+.dropCont {
+	display: none;
+}
+
+.nav, .drop li {
+  grid-column: 2;
+  display: grid;
+  text-align: left;
+  grid-template-columns: 1fr;
+  grid-row-gap: 10px;
+  font-weight: 400;
+}
+
+.drop .fa {
+	color: #a1a1a1;
+}
+
+.menu li {
+	list-style: none;
+}
+
+#drop-1:checked ~ .dropCont1,
+#drop-2:checked ~ .dropCont2, 
+#drop-3:checked ~ .dropCont3, 
+#drop-4:checked ~ .dropCont4
+ {
+	display: grid;
+	grid-template-columns: 1fr 8fr;
+	padding: 15px 0;
+}
+
+.drop label {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+}
+
+.nav > li {
+  border-bottom: 1px solid #dadada;
+  padding: 0;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .navTop .fa {
+    font-size: 31px;
+  }
+
+  .navTop {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+  }
+}
+
+@media screen and (min-width: 992px) {
+
+  .navCont {
+    background-color: #f1e9ea;
+  }
+
+  .nav {
+    margin: 0;
+    grid-column: 1;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-column-gap: 8px;
+  }
+
+  .navCont {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+  }
+
+  .nav > li:hover {
+    background: #ebd6d6;
+  }
+
+  .navTop{
+    grid-template-columns: 1fr;
+  }
+
+  .menuIcon {
+    display: none;
+  }
+
+  .menu {
+    justify-self: end;
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+    padding-right: 40px;
+  }
+
+  .nav li{
+    font-size: 12px;
+    height: 100%;
+    border-bottom: none;
+    align-self: center;
+    display: grid;
+    justify-content: center;
+    padding: 0 5px;
+  }
+
+  .drop {
+    position: relative;
+  }
+
+  .drop label , .menu-item a {
+    align-self: center;
+    justify-self: center
+  }
+
+  .drop label{
+    grid-template-columns: auto auto;
+    grid-column-gap: 5px;
+  }
+
+ /* .drop label span {
+    display: none
+  }
+*/ .drop ul {
+  	background-color: #fff;
+    font-weight: 400;
+  	font-size: 16px;
+    display: grid;
+    top: 90%;
+    position: absolute;
+    left: 15%;
+    transition: all 0.3s ease;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+  }
+  .drop ul li {
+    display: block;
+    width: 100%;
+  }
+  .drop ul li a {
+    width: 100%;
+    padding: 1em 18px;
+    display: inline-block;
+    white-space: pre;
+    box-sizing: border-box;
+  }
+  .drop ul li a:hover {
+    background: #ebebeb;
+  }
+  .drop:hover ul {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  .vendor .dropCont  {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    grid-column-gap: 20px;
+    line-height: 20px;
+    justify-items: left;
+    left: -190%;
+    width: auto;
+  }
+
+  .event .dropCont{
+      grid-template-columns: 1fr 1fr;
+      line-height: 20px;
+      grid-gap: 10px;
+  }
+
+  .nav, .drop li {
+    grid-column: auto;
+  }
+}
+

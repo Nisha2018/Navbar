@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+        list-style-type: none;
+    }
+
+    .navbar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        background: #2980b9;
+        color: #fff;
+    }
+
+    .navbar .menu ul {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-template-rows: auto;
+        grid-column-gap: 40px;
+        justify-content: center;
+    }
+
+    .menu ul li a {
+        height: 60px;
+        display: block;
+        color: #fff;
+        text-transform: uppercase;
+        line-height: 60px;
+        font-size: 14px;
+    }
+
+    .navbar .logo {
+        font-size: 30px;
+        align-self: center;
+        padding-left: 20px;
+        height: 60px;
+    	line-height: 60px;
+    }
+
+    input[type="checkbox"],.navbar label{
+    	display: none;
+    }
+
+    @media (max-width: 956px){
+    	.menu{
+    		display: none;
+    		position: relative;
+    		grid-column: span 2;
+	    	background: #34495e;
+		}
+    	.navbar label{
+    		display: grid;
+    		grid-column: 2;
+		    justify-self: end;
+		    grid-row: 1;
+		    align-self: center;
+		    font-size: 25px;
+		    padding-right: 20px;
+		    cursor: pointer;
+	    }
+
+	    #bar:checked ~ .menu{
+	    	display: grid;
+	    	left: 0;
+	    }
+
+	    .navbar .menu ul{
+	    	grid-template-rows: repeat(5,auto);
+		    grid-template-columns: auto;
+		    text-align: center;
+	    }
+
+	    .menu a.active, .menu a:hover{
+	    	color: #2980b9;
+	    }
+
+    }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="navbar">
+            <input type="checkbox" name="toggle" id="bar">
+            <label for="bar"><i class="fa fa-bars" aria-hidden="true"></i></label>
+            <div class="logo">
+                <p>DesignX</p>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

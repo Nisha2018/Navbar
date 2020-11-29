@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Animated sliding menu indicator</title>
+
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: consolas; 
+	}
+
+	.container{
+		display: grid;
+		place-items: center;
+		height: 100vh;
+	}
+
+	.nav ul{
+		display: flex;
+		justify-content: space-evenly;
+		list-style: none;
+		position: relative;
+	}
+
+	.nav ul li a{
+		position: relative;
+		text-decoration: none;
+		font-size: 2rem;
+		color: #000;
+		margin: 0 20px;
+	}
+
+	.nav #marker{
+		position: absolute;
+		height: 4px;
+		left: 20px;
+		width: 70px;
+		background: #000;
+		border-radius: 4px;
+		bottom: -8px;
+		transition: 0.5s;
+	}
+</style>
+
+</head>
+<body>
+	<div class="container">
+		<div class="nav" >
+			<ul>
+				<div id="marker"></div>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="#">Portfolio</a></li>
+				<li><a href="#">Team</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		const marker = document.querySelector("#marker");
+		const item = document.querySelectorAll('.nav ul a');
+
+		function indicator(e){
+			marker.style.left = e.offsetLeft+"px";
+			// console.log(marker.style.left);
+			marker.style.width = e.offsetWidth+"px";
+			// console.log(marker.style.width);
+		}
+
+		item.forEach(link => {
+			link.addEventListener('click',(e) => {
+				indicator(e.target);
+				// console.log(e);
+			})
+		})
+	</script>
+</body>
+</html>
